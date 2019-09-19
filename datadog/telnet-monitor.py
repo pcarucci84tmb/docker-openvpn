@@ -118,7 +118,7 @@ CLIENT_LIST,globbi,192.168.1.112:56513,10.8.0.18,,2735402,5955826,Sun Oct  1 20:
 Fri Sep 29 21:31:57 2017 192.168.1.112:62787 VERIFY OK: depth=1, C=IS, ST=Rkv, L=Reykjavik, O=Heima, OU=Ops, CN=Heima CA, name=EasyRSA, emailAddress=jakobant@gmail.com
 Fri Sep 29 21:31:57 2017 192.168.1.112:62787 VERIFY OK: depth=0, C=IS, ST=Rkv, L=Reykjavik, O=Heima, OU=Ops, CN=globbi, name=EasyRSA, emailAddress=jakobant@gmail.com
 AUTH-PAM: BACKGROUND: user 'jakobant' failed to authenticate: Authentication failure"""
-        login = re.compile(r".*authentication succeeded.*")
+        login = re.compile(r".*(authentication succeeded|new connection by client).*")
         faild_login = re.compile(r".*(failed to authenticate|Incorrect password|was not found).*")
         for line in Pygtail(logfile):
             match = login.match(line)
