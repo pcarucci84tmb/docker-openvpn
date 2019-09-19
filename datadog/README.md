@@ -36,10 +36,10 @@ app_key=
 ## Configure OpenVPN
 Enable management console, add to the openvpn server config.
 
-    ```
-    shell
-    management 127.0.0.1 5555
-    ```
+```
+shell
+management 127.0.0.1 5555
+```
 
 ## Run the monitor for ever:
 
