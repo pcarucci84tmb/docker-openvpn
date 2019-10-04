@@ -318,6 +318,7 @@ if [ ${#OVPN_EXTRA_CLIENT_CONFIG[@]} -gt 0 ]; then
 fi
 
 cat > "$conf" <<EOF
+management "127.0.0.1 5555"
 server $(getroute $OVPN_SERVER)
 verb 3
 key $EASYRSA_PKI/private/${OVPN_CN}.key
